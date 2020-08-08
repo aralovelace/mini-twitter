@@ -1,0 +1,55 @@
+<div class="panel panel-default">
+  <div class="panel-heading"><h1 class="h2 mb-3 text-primary">Add new Tweet</h1></div>
+  <div class="panel-body">
+    <div class="row">
+      <div class="col-md-12 col-md-offset-6">
+        <form #tweetForm="ngForm" (ngSubmit)="onSubmit(tweetForm)">
+          <div class="row">
+            <div class="col">
+              <div class="form-group">
+                <input type="text"
+                       id="username"
+                       name="username"
+                       required
+                       ngModel
+                       placeholder="username"
+                       class="form-control">
+              </div>
+            </div>
+            <div class="col">
+              <div class="form-group">
+                    <textarea name="tweet" id="tweet"
+                              required
+                              ngModel
+                              rows="5"
+                              placeholder="What is happening?"
+                              class="form-control">
+                    </textarea>
+              </div>
+            </div>
+            <div class="col">
+              <div class="form-group">
+                <input typpe="text"
+                       id="image"
+                       name="image"
+                       placeholder="Image URL"
+                       ngModel
+                       #image
+                       class="form-control">
+              </div>
+              <div class="form-group">
+                <img [src]="image.value" alt="" style="max-height: 80px" class="img-responsive">
+              </div>
+            </div>
+            <div class="col">
+              <button class="btn btn-primary"
+                      [disabled]="!tweetForm.valid"
+                      type="submit"> TWEET
+              </button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

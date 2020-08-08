@@ -1,0 +1,18 @@
+<li class="list-group-item" >
+  <div class="row">
+    <div class="col">
+      <p>{{tweet.username}} </p>
+    </div>
+    <div class="col text-right">
+      <a (click)="onDeleteEvent(tweet.id)" class="text-danger" style="cursor: pointer" >X</a>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-6">
+      <img src="{{ tweet.image }}" alt="" class="img-responsive" style="max-height: 150px;">
+    </div>
+    <div class="col">
+      <p>{{tweet.tweet}}</p>
+    </div>
+  </div>
+</li>

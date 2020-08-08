@@ -1,0 +1,21 @@
+<app-post-tweet (tweetSubmitted)="onSubmitTweet($event)">
+
+</app-post-tweet>
+<div class="row">
+  <div class="col-md-12 col-md-offset-6">
+    <p *ngIf="loadedTwits.length < 1 && !isFetch"> No Tweets available!</p>
+    <ul class="list-group" *ngIf="loadedTwits.length >=1 && !isFetch">
+
+      <app-tweet-list *ngFor="let twit of loadedTwits"  [tweet]="twit" (deleteTweet)="onDeleteTweet($event)">
+      </app-tweet-list>
+
+    </ul>
+    <p *ngIf="isFetch && !error">
+      Loading...
+    </p>
+    <div class="alert alert-danger" *ngIf="error">
+      <h2>An Error Occurred!</h2>
+      <p>{{ error }}</p>
+    </div>
+  </div>
+</div>
