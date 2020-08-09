@@ -6,7 +6,10 @@
     <p *ngIf="loadedTwits.length < 1 && !isFetch"> No Tweets available!</p>
     <ul class="list-group" *ngIf="loadedTwits.length >=1 && !isFetch">
 
-      <app-tweet-list *ngFor="let twit of loadedTwits"  [tweet]="twit" (deleteTweet)="onDeleteTweet($event)">
+      <app-tweet-list *ngFor="let twit of loadedTwits let i = index"
+                      [tweet]="twit"
+                      [index]="i"
+                      (deleteTweet)="onDeleteTweet($event)">
       </app-tweet-list>
 
     </ul>

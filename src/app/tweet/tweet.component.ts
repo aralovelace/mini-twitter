@@ -42,10 +42,10 @@ export class TweetComponent implements OnInit {
 
   }
 
-  onDeleteTweet(twitData: { id:any}) {
+  onDeleteTweet(twitData: { id:any, index:number}) {
 
     this.twitterService.deleteTweet(twitData.id). subscribe(responseData =>{
-      this.loadedTwits.splice(twitData.id, 1);
+      this.loadedTwits.splice(twitData.index, 1);
     }, error => {
       this.error.next(error.message)
     });

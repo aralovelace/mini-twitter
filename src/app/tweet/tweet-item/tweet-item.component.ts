@@ -11,12 +11,13 @@ export class TweetItemComponent  {
 
   loadedTwits: Twitter[]  = [];
   @Input() tweet: Twitter;
-  @Output('deleteTweet') deleteTwit = new EventEmitter<{id:any}>();
+  @Input() index: number;
+  @Output('deleteTweet') deleteTwit = new EventEmitter<{id:any, index: number}>();
 
-
-  onDeleteEvent(id: any) {
+  onDeleteEvent(id: string, index: number) {
     this.deleteTwit.emit({
-      id: id
+      id: id,
+      index: index
     });
   }
 }
