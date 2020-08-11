@@ -1,11 +1,12 @@
-import {Component, EventEmitter, OnInit, Output} from '@angular/core';
+import {Component, EventEmitter,  Output} from '@angular/core';
+import {NgForm} from "@angular/forms";
 
 @Component({
   selector: 'app-post-tweet',
   templateUrl: './post-tweet.component.html',
   styleUrls: ['./post-tweet.component.scss']
 })
-export class PostTweetComponent implements OnInit {
+export class PostTweetComponent {
 
   @Output('tweetSubmitted') twitSubmitted = new EventEmitter<{username: string, tweet: string, image:string}>();
 
